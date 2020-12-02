@@ -21,7 +21,7 @@ func main() {
 		})
 	})
 
-	if err := engine.Run("0.0.0.0:8080"); err != nil {
+	if err := engine.Run(); err != nil {
 		log.Fatal(err.Error())
 	}
 	//engine.Run()
