@@ -28,5 +28,11 @@ func main() {
 		context.Writer.Write([]byte("hello, " + name + "."))
 	})
 
+	engine.DELETE("/user/:id", func(context *gin.Context) {
+		userID := context.Param("id")
+		fmt.Println(userID)
+		context.Writer.Write([]byte("Delete Id: " + userID + "."))
+	})
+
 	engine.Run()
 }
