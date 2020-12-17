@@ -23,10 +23,16 @@ func m1(c *gin.Context) {
 	fmt.Println("M1 out  ...")
 }
 
+func m2(c *gin.Context) {
+	fmt.Println("M2 in ...")
+	c.Abort()
+	fmt.Println("M2 out  ...")
+}
+
 func main() {
 	r := gin.Default()
 
-	r.Use(m1)
+	r.Use(m1, m2)
 
 	r.GET("/index", indexHandler)
 	r.GET("/shop", func(c *gin.Context) {
