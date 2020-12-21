@@ -12,6 +12,8 @@ func failOnError(err error, mes string) {
 }
 
 func main() {
+
+	// 欲戴其冠,必先承其重;欲握玫瑰,必先承其痛.
 	conn, err := amqp.Dial("amqp://cheng:Cheng6688@localhost:5672/")
 	failOnError(err, "Failed to connect to RabbitMQ.")
 	defer conn.Close()
