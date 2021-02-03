@@ -50,6 +50,8 @@ func setupRouter() *gin.Engine {
 	  	-H 'content-type: application/json' \
 	  	-d '{"value":"bar"}'
 	*/
+
+	//  test
 	authorized.POST("admin", func(c *gin.Context) {
 		user := c.MustGet(gin.AuthUserKey).(string)
 
